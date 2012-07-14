@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
     end
   end
 
-def show_author_posts
+def show_author_products
     @product = Product.all.where(:author => params[:author])
   
 end
