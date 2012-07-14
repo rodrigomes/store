@@ -7,6 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= link_to product.name, product_path(product) %></td>
         <td><%= product.price %></td>
+        <td><%= product.author %></td>
         <td><%=l product.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
