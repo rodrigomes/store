@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_filter :autenticacao, :except => [:index, :show] 
+  
   # GET /products
   # GET /products.json
   def index
@@ -80,4 +83,10 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def show_author_posts
+    @product = Product.all.where(:author => params[:author])
+  
+end
+
 end
